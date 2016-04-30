@@ -13,7 +13,7 @@ class SClientIntegrationSpec extends FunSpecLike with Matchers {
   val client = new SClient("127.0.0.1:2552")
   describe("akkadment-db-client"){
     it("should set a value"){
-      client.set("jame", new Integer(1313))
+      client.set("james", new Integer(1313))
       val futureResult = client.get("james")
       val result = Await.result(futureResult, 10 seconds)
       result should equal (1313)
